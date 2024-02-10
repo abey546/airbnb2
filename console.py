@@ -52,6 +52,27 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
         print(all_objs[key])
+    def do_show(self, args):
+        tokens = args.split(" ")
+        """Deletes an instance based on the class name and id."""
+        if not args:
+            print("** class name missing **")
+            return
+        if tokens[0] not in HBNBCommand.classes:
+            print("** class doesn't exist **")
+            return
+        if len(tokens) < 2:
+            print("** instance id missing **")
+            return
+        class_name = tokens[0]
+        obj_id = tokens[1]
+        key = "{}.{}".format(class_name, obj_id)
+        all_objs = storage.all()
+        if key not in all_objs:
+            print("** no instance found **")
+            return
+        del all_objs[key]
+        storage.save()
 
 
 
