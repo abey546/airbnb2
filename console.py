@@ -25,10 +25,12 @@ class HBNBCommand(cmd.Cmd):
         elif tokens[0] not in HBNBCommand.classes:
             print("** class doesn't exist **")
             return
-        new_instance = HBNBCommand.classes[tokens[0]]()
-        storage.new(new_instance)
+        else:
+            print(eval(tokens[0])().id)
+        #new_instance = HBNBCommand.classes[tokens[0]]()
+        #storage.new(new_instance)
         storage.save()
-        print(new_instance.id)
+        #print(new_instance.id)
 
 if __name__ == '__main__' :
     HBNBCommand().cmdloop()
