@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
         #storage.new(new_instance)
         storage.save()
         #print(new_instance.id)
-    def show(self, args):
+    def do_show(self, args):
         tokens = args.split(" ")
         """Displays string represenation of an instance"""
         class_name = tokens[0]
