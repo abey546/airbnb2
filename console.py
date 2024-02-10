@@ -34,8 +34,7 @@ class HBNBCommand(cmd.Cmd):
         #print(new_instance.id)
     def do_show(self, args):
         tokens = args.split(" ")
-        """Displays string represenation of an instance"""
-        #class_name = tokens[0]
+        """Displays string representation of an instance"""
         if not args:
             print("** class name missing **")
             return
@@ -44,6 +43,7 @@ class HBNBCommand(cmd.Cmd):
             return
         if len(tokens) < 2:
             print("** instance id missing **")
+            return
         class_name = tokens[0]
         obj_id = tokens[1]
         key = "{}.{}".format(class_name, obj_id)
@@ -52,6 +52,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
         print(all_objs[key])
+
 
 
 if __name__ == '__main__' :
