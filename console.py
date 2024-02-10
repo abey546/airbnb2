@@ -52,7 +52,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
             return
         print(all_objs[key])
-    def do_show(self, args):
+    def do_destroy(self, args):
         tokens = args.split(" ")
         """Deletes an instance based on the class name and id."""
         if not args:
