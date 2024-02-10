@@ -1,7 +1,8 @@
 #!/usr/bin/python3 
 import cmd
-from models.engine.file_storage import storage
+from models import storage
 from models.base_model import BaseModel
+import json
 class HBNBCommand(cmd.Cmd):
     """Contains the functionality for the HBNB console"""
     prompt = "(hbnb) "
