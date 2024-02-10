@@ -6,7 +6,7 @@ import json
 class HBNBCommand(cmd.Cmd):
     """Contains the functionality for the HBNB console"""
     prompt = "(hbnb) "
-    classes = {"BaseModel"}
+    classes = {"BaseModel", "user"}
     def do_quit(self, arg):
         """Quit command to exit the program"""
         return True
