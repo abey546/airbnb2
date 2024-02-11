@@ -1,8 +1,16 @@
 #!/usr/bin/python3 
-import cmd
+from inspect import isclass
 from models import storage
 from models.base_model import BaseModel
-import json
+from models.user import User
+from models.city import City
+from models.state import State
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
+from json import loads, dumps, decoder
+import cmd
+import sys
 class HBNBCommand(cmd.Cmd):
     """Contains the functionality for the HBNB console"""
     prompt = "(hbnb) "
